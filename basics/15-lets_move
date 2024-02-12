@@ -1,2 +1,2 @@
 #!/bin/bash
-mv /basics/*[A-Z]* /tmp/u
+mv /tmp/test_mv/*[A-Z]* /tmp/u
