@@ -1,0 +1,2 @@
+#!/bin/bash
+chmod u=rxw,g=rx,o=wx hello
