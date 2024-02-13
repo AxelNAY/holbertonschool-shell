@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod 111 permission
+chmod 711 permission
