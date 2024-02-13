@@ -1,0 +1,2 @@
+#!/bin/bash
+grep racine /etc/passwd | tail -3
