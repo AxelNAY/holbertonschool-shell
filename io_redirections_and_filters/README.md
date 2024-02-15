@@ -1,26 +1,26 @@
 Explication des différentes task du Projet 2 Shell I/O Redirections and filters :
 
-- Task 0 : Le but est d'écrire un script dans le fichier 0-hello_world créer préalablement pour changer l'utilisateur actuel à l'utilisateur betty.
-Pour cela, j'utilise emacs (que j'utiliserai pour tous les autres fichiers) afin d'éditer le fichier en écrivant les deux lignes #!/bin/bash (qui sera réutiliser pour tous les fichiers) et la commande su betty. A noter que nous n'écrirons les commandes que sur la deuxième ligne des fichiers.
+- Task 0 : Le but est d'écrire un script dans le fichier 0-hello_world créer afficher le texte Hello, World.
+Pour cela, j'utilise emacs (que j'utiliserai pour tous les autres fichiers) afin d'éditer le fichier en écrivant les deux lignes #!/bin/bash (qui sera réutiliser pour tous les fichiers) et la commande echo "Hello, World". A noter que nous n'écrirons les commandes que sur la deuxième ligne des fichiers.
 J'écris ensuite la commande chmod u+x 0-hello_world pour donner au propriètaire du fichier la pemission de l'exécuter, que je réutiliserai pour tous les autres fichiers.
 
-- Task 1 : Le but est d'écrire un script dans le fichier 1-confused_smiley créer préalablement pour écrire le nom de l'utilisateur actuel.
-Pour cela, j'écris la commande whoami.
+- Task 1 : Le but est d'écrire un script dans le fichier 1-confused_smiley créer préalablement pour d'afficher un smiley confus.
+Pour cela, j'écris la commande echo '"'"(Ôo)'". Petite exception où je n'ai pas utiliser emacs mais vi pour cette Task car emacs ne permet pas d'écrire Ô.
 
-- Task 2 : Le but est d'écrire un script dans le fichier 2-hellofile créer préalablement pour écrire le nom de tous les groupes dont l'utilisateur actuel fait partie.
-Pour cela, j'écris la commande groups.
+- Task 2 : Le but est d'écrire un script dans le fichier 2-hellofile créer préalablement pour afficher le contenu du fichier /etc/passwd.
+Pour cela, j'écris la commande cat /etc/passwd.
 
-- Task 3 : Le but est d'écrire un script dans le fichier 3-twofiles créer préalablement pour changer le propriétaire du fichier hello à l'utilisateur betty.
-Pour cela, j'écris la commande chown betty hello.
+- Task 3 : Le but est d'écrire un script dans le fichier 3-twofiles créer préalablement pour afficher le contenu des fichiers /etc/passwd et /etc/hosts.
+Pour cela, j'écris la commande chown cat /etc/passwd /etc/hosts.
 
-- Task 4 : Le but est d'écrire un script dans le fichier 4-lastlines créer préalablement pour créer le fichier hello.
-Pour cela, j'écris la commande touch hello.
+- Task 4 : Le but est d'écrire un script dans le fichier 4-lastlines créer préalablement pour afficher les 10 dernières lignes du fichier /etc/passwd.
+Pour cela, j'écris la commande tail -n 10 /etc/passwd, l'option -n permet de sélectionner le nombre de ligne à afficher.
 
-- Task 5 : Le but est d'écrire un script dans le fichier 5-firstlines créer préalablement pour donner au propriètaire du fichier hello la pemission de l'exécuter.
-Pour cela, j'écris la commande chmod u+x hello.
+- Task 5 : Le but est d'écrire un script dans le fichier 5-firstlines créer préalablement pour afficher les 10 premières lignes du fichier /etc/passwd.
+Pour cela, j'écris la commande head -n 10 /etc/passwd.
 
-- Task 6 : Le but est d'écrire un script dans le fichier 6-third_line créer préalablement pour ajouter l’autorisation d’exécution au propriétaire et au propriétaire du groupe, ainsi que l’autorisation de lecture aux autres utilisateurs, au fichier hello.
-Pour cela, j'écris la commande chmod 754 hello (voir chmod pour plus de détails).
+- Task 6 : Le but est d'écrire un script dans le fichier 6-third_line créer préalablement pour afficher la troisième ligne du fichier iacta.
+Pour cela, j'écris la commande head -n 3 iacta | tail -1, la partie head permet de choisir les 3 premières lignes et la partie tail permet de n'afficher que la troisième et pas les précédentes.
 
 - Task 7 : Le but est d'écrire un script dans le fichier 7-file créer préalablement pour ajouter l’autorisation d’exécution au propriétaire, au propriétaire du groupe et aux autres utilisateurs, au fichier hello.
 Pour cela, j'écris la commande chmod ugo+x hello.
