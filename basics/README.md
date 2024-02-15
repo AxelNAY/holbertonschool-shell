@@ -66,7 +66,8 @@ Le but est d'écrire un script dans le fichier 15-lets_move créer préalablemen
 Pour cela, j'écris la commande mv [[:upper:]]* /tmp/u, l'option [[:upper:]] sélectionne les fichiers commençant par une majuscule.
 
 - Task 16 :
-Le but est d'écrire un script dans le fichier 16-clean_emacs créer préalablement pour détruire tous les fichiers se terminant par '~'.   
+Le but est d'écrire un script dans le fichier 16-clean_emacs créer préalablement pour détruire tous les fichiers se terminant par ~.
+
 Pour cela, j'écris la commande find . -name '*~' -delete, find . -name '*~' sélectionne tous les fichiers se terminant par ~ et -delete les détruit.
 
 - Task 17 :
