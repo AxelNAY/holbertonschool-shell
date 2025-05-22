@@ -1,70 +1,65 @@
-Explication des différentes task du Projet 1 Shell Permissions :
+# Shell, permissions
 
-- Task 0 :
-Le but est d'écrire un script dans le fichier 0-iam_betty créer préalablement pour changer l'utilisateur actuel à l'utilisateur betty.
-Pour cela, j'utilise emacs (que j'utiliserai pour tous les autres fichiers) afin d'éditer le fichier en écrivant les deux lignes #!/bin/bash (qui sera réutiliser pour tous les fichiers) et la commande su betty. A noter que nous n'écrirons les commandes que sur la deuxième ligne des fichiers.
-J'écris ensuite la commande chmod u+x 0-iam_betty pour donner au propriètaire du fichier la pemission de l'exécuter, que je réutiliserai pour tous les autres fichiers.
+## Presentation
 
-- Task 1 :
-Le but est d'écrire un script dans le fichier 1-who_am_i créer préalablement pour écrire le nom de l'utilisateur actuel.
-Pour cela, j'écris la commande whoami.
+This directory contain files with shell commands links to files permissions.
 
-- Task 2 :
-Le but est d'écrire un script dans le fichier 2-groups créer préalablement pour écrire le nom de tous les groupes dont l'utilisateur actuel fait partie.
-Pour cela, j'écris la commande groups.
+## Presentation of chmod
 
-- Task 3 :
-Le but est d'écrire un script dans le fichier 3-new_owner créer préalablement pour changer le propriétaire du fichier hello à l'utilisateur betty.
-Pour cela, j'écris la commande chown betty hello.
+chmod stands for "change mode", and it's a command used in Unix/Linux systems to change the permissions of files or directories.
 
-- Task 4 :
-Le but est d'écrire un script dans le fichier 4-empty créer préalablement pour créer le fichier hello.
-Pour cela, j'écris la commande touch hello.
+### Permissions
 
-- Task 5 :
-Le but est d'écrire un script dans le fichier 5-execute créer préalablement pour donner au propriètaire du fichier hello la pemission de l'exécuter.
-Pour cela, j'écris la commande chmod u+x hello.
+* **read:** read the file
 
-- Task 6 :
-Le but est d'écrire un script dans le fichier 6-multiple_permissions créer préalablement pour ajouter l’autorisation d’exécution au propriétaire et au propriétaire du groupe, ainsi que l’autorisation de lecture aux autres utilisateurs, au fichier hello.
-Pour cela, j'écris la commande chmod 754 hello (voir chmod pour plus de détails).
+* **write:** write the file
 
-- Task 7 :
-Le but est d'écrire un script dans le fichier 7-everybody créer préalablement pour ajouter l’autorisation d’exécution au propriétaire, au propriétaire du groupe et aux autres utilisateurs, au fichier hello.
-Pour cela, j'écris la commande chmod ugo+x hello.
+* **execute:** execute the file
 
-- Task 8 :
-Le but est d'écrire un script dans le fichier 8-James_Bond créer préalablement pour ne donner aucune autorisation au propriétaire et au propriétaire du groupe et ajouter l’autorisation d’exécution, de lecture et d'écriture aux autres utilisateurs, au fichier hello.
-Pour cela, j'écris la commande chmod 007 hello.
+### Assigned
 
-- Task 9 :
-Le but est d'écrire un script dans le fichier 9-John_Doe créer préalablement pour ajouter l’autorisation d’exécution au propriétaire et au propriétaire du groupe, ainsi que l’autorisation d'écriture et d'exécution aux autres utilisateurs, au fichier hello.
-Pour cela, j'écris la commande chmod 753 hello.
+* **owner:** owner of the file
 
-- Task 10 :
-Le but est d'écrire un script dans le fichier 10-mirror_permissions créer préalablement pour définir le mode du fichier hello de la même manière que le mode d’olleh.
-Pour cela, j'écris la commande chmod --reference=olleh hello, l'option --reference permet d’appliquer les permissions d’un fichier à un autre.
+* **group:** group assigned to the file. Users in the same group as the owner
 
-- Task 11 :
-Le but est d'écrire un script dans le fichier 11-directories_permissions créer préalablement pour ajouter l’autorisation d’exécution à tous les sous-répertoires du répertoire courant pour le propriétaire, le propriétaire du groupe et tous les autres utilisateurs.
-Pour cela, j'écris la commande chmod -R a+X ./, l'option -R permet de modifier les autorisations à l’ensemble de l’arborescence.
+* **others:** others users
 
-- Task 12 :
-Le but est d'écrire un script dans le fichier 12-directory_permissions créer préalablement pour créer un répertoire appelé my_dir avec les autorisations 751 dans le répertoire de travail.
-Pour cela, j'écris la commande mkdir -m 751 my_dir, l'option -m permet de définir les autorisations 751 au moment de créer le répertoire my_dir en contournant le umask par défaut du système.
+## Files
 
-- Task 13 :
-Le but est d'écrire un script dans le fichier 13-change_group créer préalablement pour remplacer le propriétaire du groupe par School pour le fichier hello.
-Pour cela, j'écris la commande chown :school hello.
+* **0-iam_betty:** Change actual user to betty user
 
-- Task 14 :
-Le but est d'écrire un script dans le fichier 14-change_owner_and_group créer préalablement pour remplacer le propriétaire par vincent et le propriétaire du groupe par staff pour tous les fichiers et répertoires du répertoire de travail.
-Pour cela, j'écris la commande chown vincent:staff *.
+* **1-who_am_i:** Write actual user
 
-- Task 15 :
-Le but est d'écrire un script dans le fichier 15-symbolic_link_permissions créer préalablement pour changer le propriétaire et le propriétaire du groupe de _hello en vincent et staff respectivement.
-Pour cela, j'écris la commande chown -h vincent:staff _hello, l'option -h permet de changer la propriété du lien symbolique.
+* **2-groups:** Write names of all groups where the actual user is part of
 
-- Task 16 :
-Le but est d'écrire un script dans le fichier 16-if_only créer préalablement pour modifier le propriétaire du fichier hello à vincent uniquement s’il appartient à l’utilisateur guillaume.
-Pour cela, j'écris la commande chown --from=guillaume vincent hello.
+* **3-new_owner:** Change property of hello file to user betty
+
+* **4-empty:** Create hello file
+
+* **5-execute:** Give execution permission to hello file
+
+* **6-multiple_permissions:** Give execution permission to the owner and the group and read permission to others for the hello file
+
+* **7-everybody:** Give execution permission to everybody for hello file
+
+* **8-James_Bond:** Give no permission to owner and the group except others who have all permissions for hello file
+
+* **9-John_Doe:** Give execution permission to owner and the group except others who also have read permission for hello file
+
+* **10-mirror_permissions:** Set mode of hello file as the same as olleh file
+
+* **11-directories_permissions:** Give execution permission to all sub-directories of the current directory for everybody
+
+* **12-directory_permissions:** Create my_dir directory and give all permissions for the owner, execute and read permission for the group and just execution permission for the others
+
+* **13-change_group:** Replace the owner to the hello file by School
+
+* **14-change_owner_and_group:** Replace the owner by vincent and the owner of the group by staff for all files and sub-directories of the current directory
+
+* **15-symbolic_link_permissions:** Replace owner by vincent and owner of the group _hello by staff
+
+* **16-if_only:** Replace owner of the hello file by vincent only if the actual owner is guillaume
+
+## Author
+
+Axel NAY

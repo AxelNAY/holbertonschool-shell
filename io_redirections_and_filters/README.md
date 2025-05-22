@@ -1,85 +1,65 @@
-Explication des différentes task du Projet 2 Shell I/O Redirections and filters :
+# Shell, I/O Redirections and filters
 
-- Task 0 : Le but est d'écrire un script dans le fichier 0-hello_world créer afficher le texte Hello, World.
-Pour cela, j'utilise emacs (que j'utiliserai pour tous les autres fichiers) afin d'éditer le fichier en écrivant les deux lignes #!/bin/bash (qui sera réutiliser pour tous les fichiers) et la commande echo "Hello, World". A noter que nous n'écrirons les commandes que sur la deuxième ligne des fichiers.
-J'écris ensuite la commande chmod u+x 0-hello_world pour donner au propriètaire du fichier la pemission de l'exécuter, que je réutiliserai pour tous les autres fichiers.
+## Presentation
 
-- Task 1 : Le but est d'écrire un script dans le fichier 1-confused_smiley créer préalablement pour d'afficher un smiley confus.
-Pour cela, j'écris la commande echo '"'"(Ôo)'". Petite exception où je n'ai pas utiliser emacs mais vi pour cette Task car emacs ne permet pas d'écrire Ô.
+This directory contains files with shell commands for I/O Redirections and filters courses
 
-- Task 2 : Le but est d'écrire un script dans le fichier 2-hellofile créer préalablement pour afficher le contenu du fichier /etc/passwd.
-Pour cela, j'écris la commande cat /etc/passwd.
+## Files
 
-- Task 3 : Le but est d'écrire un script dans le fichier 3-twofiles créer préalablement pour afficher le contenu des fichiers /etc/passwd et /etc/hosts.
-Pour cela, j'écris la commande chown cat /etc/passwd /etc/hosts.
+* **0-hello_world:** Print "Hello, World" follow by a new line
 
-- Task 4 : Le but est d'écrire un script dans le fichier 4-lastlines créer préalablement pour afficher les 10 dernières lignes du fichier /etc/passwd.
-Pour cela, j'écris la commande tail -n 10 /etc/passwd, l'option -n permet de sélectionner le nombre de ligne à afficher.
+* **1-confused_smiley:** Print a confused smiley follow by a new line
 
-- Task 5 : Le but est d'écrire un script dans le fichier 5-firstlines créer préalablement pour afficher les 10 premières lignes du fichier /etc/passwd.
-Pour cela, j'écris la commande head -n 10 /etc/passwd.
+* **2-hellofile:** Display the content of the file /etc/passwd
 
-- Task 6 : Le but est d'écrire un script dans le fichier 6-third_line créer préalablement pour afficher la troisième ligne du fichier iacta.
-Pour cela, j'écris la commande head -n 3 iacta | tail -1, la partie head permet de choisir les 3 premières lignes et la partie tail permet de n'afficher que la troisième et pas les précédentes.
+* **3-twofiles:** Display the content of the files /etc/passwd and /etc/hosts
 
-- Task 7 : Le but est d'écrire un script dans le fichier 7-file créer préalablement pour ajouter l’autorisation d’exécution au propriétaire, au propriétaire du groupe et aux autres utilisateurs, au fichier hello.
-Pour cela, j'écris la commande chmod ugo+x hello.
+* **4-lastlines:** Displays the last 10 lines of the file /etc/passwd
 
-- Task 8 : Le but est d'écrire un script dans le fichier 8-cwd_state créer préalablement pour ne donner aucune autorisation au propriétaire et au propriétaire du groupe et ajouter l’autorisation d’exécution, de lecture et d'écriture aux autres utilisateurs, au fichier hello.
-Pour cela, j'écris la commande chmod 007 hello.
+* **5-firstlines:** Displays the first 10 lines of the file /etc/passwd
 
-- Task 9 : Le but est d'écrire un script dans le fichier 9-duplicate_last_line créer préalablement pour ajouter l’autorisation d’exécution au propriétaire et au propriétaire du groupe, ainsi que l’autorisation d'écriture et d'exécution aux autres utilisateurs, au fichier hello.
-Pour cela, j'écris la commande chmod 753 hello.
+* **6-third_line:** Display the third line of the file iacta
 
-- Task 10 : Le but est d'écrire un script dans le fichier 10-no_more_js créer préalablement pour définir le mode du fichier hello de la même manière que le mode d’olleh.
-Pour cela, j'écris la commande chmod --reference=olleh hello, l'option --reference permet d’appliquer les permissions d’un fichier à un autre.
+* **7-file:** Create the file "\*\\'"Best School"\'\\*$\?\*\*\*\*\*:)" with the text "Best School" follow by a new line
 
-- Task 11 : Le but est d'écrire un script dans le fichier 11-directories créer préalablement pour ajouter l’autorisation d’exécution à tous les sous-répertoires du répertoire courant pour le propriétaire, le propriétaire du groupe et tous les autres utilisateurs.
-Pour cela, j'écris la commande chmod -R a+X ./, l'option -R permet de modifier les autorisations à l’ensemble de l’arborescence.
+* **8-cwd_state:** Write into the file ls_cwd_content the result of the command ls -la
 
-- Task 12 : Le but est d'écrire un script dans le fichier 12-newest_files créer préalablement pour créer un répertoire appelé my_dir avec les autorisations 751 dans le répertoire de travail.
-Pour cela, j'écris la commande mkdir -m 751 my_dir, l'option -m permet de définir les autorisations 751 au moment de créer le répertoire my_dir en contournant le umask par défaut du système.
+* **9-duplicate_last_line:** Duplicate the last line of the file iacta
 
-- Task 13 : Le but est d'écrire un script dans le fichier 13-unique créer préalablement pour remplacer le propriétaire du groupe par School pour le fichier hello.
-Pour cela, j'écris la commande chown :school hello.
+* **10-no_more_js:** Delete all files in javascript
 
-- Task 14 : Le but est d'écrire un script dans le fichier 14-findthatword créer préalablement pour remplacer le propriétaire par vincent et le propriétaire du groupe par staff pour tous les fichiers et répertoires du répertoire de travail.
-Pour cela, j'écris la commande chown vincent:staff *.
+* **11-directories:** Counts the number of directories and sub-directories in the current directory
 
-- Task 15 : Le but est d'écrire un script dans le fichier 15-countthatword créer préalablement pour changer le propriétaire et le propriétaire du groupe de _hello en vincent et staff respectivement.
-Pour cela, j'écris la commande chown -h vincent:staff _hello, l'option -h permet de changer la propriété du lien symbolique.
+* **12-newest_files:** Displays the 10 newest files in the current directory
 
-- Task 16 : Le but est d'écrire un script dans le fichier 16-whatsnext créer préalablement pour modifier le propriétaire du fichier hello à vincent uniquement s’il appartient à l’utilisateur guillaume.
-Pour cela, j'écris la commande chown --from=guillaume vincent hello.
+* **13-unique:** Takes a list of words as input and prints only words that appear exactly once
 
-- Task 17 : Le but est d'écrire un script dans le fichier 17-hidethisword créer préalablement pour modifier le propriétaire du fichier hello à vincent uniquement s’il appartient à l’utilisateur guillaume.
-Pour cela, j'écris la commande chown --from=guillaume vincent hello.
+* **14-findthatword:** Display lines containing the pattern “root” from the file /etc/passwd
 
-- Task 18 : Le but est d'écrire un script dans le fichier 18-letteronly créer préalablement pour écrire le nom de l'utilisateur actuel.
-Pour cela, j'écris la commande whoami.
+* **15-countthatword:** Display the number of lines that contain the pattern “bin” in the file /etc/passwd
 
-- Task 19 : Le but est d'écrire un script dans le fichier 19-AZ créer préalablement pour écrire le nom de tous les groupes dont l'utilisateur actuel fait partie.
-Pour cela, j'écris la commande groups.
+* **16-whatsnext:** Display lines containing the pattern “root” and 3 lines after them in the file /etc/passwd
 
-- Task 20 : Le but est d'écrire un script dans le fichier 20-hiago créer préalablement pour changer le propriétaire du fichier hello à l'utilisateur betty.
-Pour cela, j'écris la commande chown betty hello.
+* **17-hidethisword:** Display all the lines in the file /etc/passwd that do not contain the pattern “bin”
 
-- Task 21 : Le but est d'écrire un script dans le fichier 21-reverse créer préalablement pour créer le fichier hello.
-Pour cela, j'écris la commande touch hello.
+* **18-letteronly:** Display all lines of the file /etc/ssh/sshd_config starting with a letter
 
-- Task 22 : Le but est d'écrire un script dans le fichier 22-users_and_homes créer préalablement pour donner au propriètaire du fichier hello la pemission de l'exécuter.
-Pour cela, j'écris la commande chmod u+x hello.
+* **19-AZ:** Replace all characters A and c from input to Z and e respectively
 
-- Task 23 : Le but est d'écrire un script dans le fichier 23-empty_casks créer préalablement pour ajouter l’autorisation d’exécution au propriétaire et au propriétaire du groupe, ainsi que l’autorisation de lecture aux autres utilisateurs, au fichier hello.
-Pour cela, j'écris la commande chmod 754 hello (voir chmod pour plus de détails).
+* **20-hiago:** Removes all letters c and C from input
 
-- Task 24 : Le but est d'écrire un script dans le fichier 24-gifs créer préalablement pour ajouter l’autorisation d’exécution au propriétaire, au propriétaire du groupe et aux autres utilisateurs, au fichier hello.
-Pour cela, j'écris la commande chmod ugo+x hello.
+* **21-reverse:** Reverse its input
 
-- Task 25 : Le but est d'écrire un script dans le fichier 25-acrostic créer préalablement pour ne donner aucune autorisation au propriétaire et au propriétaire du groupe et ajouter l’autorisation d’exécution, de lecture et d'écriture aux autres utilisateurs, au fichier hello.
-Pour cela, j'écris la commande chmod 007 hello.
+* **22-users_and_homes:** Displays all users and their home directories, sorted by users
 
-- Task 26 : Le but est d'écrire un script dans le fichier 26-the_biggest_fan créer préalablement pour ajouter l’autorisation d’exécution au propriétaire et au propriétaire du groupe, ainsi que l’autorisation d'écriture et d'exécution aux autres utilisateurs, au fichier hello.
-Pour cela, j'écris la commande chmod 753 hello.
+* **23-empty_casks:** Finds all empty files and directories in the current directory and all sub-directories
 
+* **24-gifs:** Lists all the files with a .gif extension in the current directory and all its sub-directories
 
+* **25-acrostic:** Decodes acrostics that use the first letter of each line
+
+* **26-the_biggest_fan:** Parses web servers logs in TSV format as input and displays the 11 hosts or IP addresses which did the most requests
+
+## Author
+
+Axel NAY
